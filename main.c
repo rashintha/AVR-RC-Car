@@ -1,4 +1,4 @@
-#define F_CPU 8000000UL
+#define F_CPU 16000000UL
 
 #define UP 		0x00
 #define DOWN	0x01
@@ -16,6 +16,10 @@
 
 #define FORWARD	0x04
 #define REVERSE	0x05
+
+//Comment the MCU which you're not using.
+#define ATMEGA_328P
+//#define ATMEGA_32A
 
 #include <avr/io.h>
 #include "pwm.h"
