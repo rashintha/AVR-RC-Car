@@ -24,6 +24,7 @@
 #include <avr/io.h>
 #include "pwm.h"
 #include "serial.h"
+#include "software_serial.h"
 
 void controlMotor(uint8_t status);
 
@@ -43,9 +44,9 @@ int main(void){
 	while(1){
 		uint8_t input = getCh();
 
-		if(input == '0')
+		if(input == 'u')
 			controlMotor(FORWARD);
-		else if(input == '1')
+		else if(input == 'd')
 			controlMotor(REVERSE);
 	}
 	

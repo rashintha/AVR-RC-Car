@@ -9,7 +9,7 @@ uint8_t getCh(void);
 void putCh(uint8_t data);
 
 void initUSART(void){
-   //Set Baud rate; ubrr_value = F_OSC/(16 x Baud_rate) - 1; e.g. 8e6/(9600*16) -1 =51
+   //Set Baud rate; ubrr_value = F_OSC/(16 x Baud_rate) - 1; e.g. 16e6/(9600*16) -1 = 103
 	UBRRL_REG = BAUD_VAL;
 	UBRRH_REG = (BAUD_VAL >> 8);
 	UCSRC_REG |= (1 << UCSZ1_BIT) | (1 << UCSZ0_BIT);

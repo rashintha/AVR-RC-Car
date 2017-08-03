@@ -14,6 +14,10 @@
 #define RXC_BIT		RXC0
 #define UDRE_BIT	UDRE0
 
+#define OC1x_DDR	DDRB
+#define OC1A_PIN	PB1
+#define OC1B_PIN	PB2
+
 #elif ATMEGA_32A
 	
 #define UBRRL_REG 	UBRRL
@@ -30,5 +34,9 @@
 #define TXEN_BIT  	TXEN
 #define RXC_BIT		RXC
 #define UDRE_BIT	UDRE
+
+#define OC1x_DDR	DDRD
+#define OC1A_PIN	PD5
+#define OC1B_PIN	PD4
 
 #endif

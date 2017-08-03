@@ -1,7 +1,9 @@
-main.o: main.c pwm.h serial.h cpu_def.h
+main.o: main.c pwm.h cpu_def.h serial.h software_serial.h
 
 pwm.h:
 
+cpu_def.h:
+
 serial.h:
 
-cpu_def.h:
+software_serial.h:
