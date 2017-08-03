@@ -22,9 +22,9 @@
 //#define ATMEGA_32A
 
 #include <avr/io.h>
+#include <util/delay.h>
 #include "pwm.h"
 #include "serial.h"
-#include "software_serial.h"
 
 void controlMotor(uint8_t status);
 
@@ -38,11 +38,13 @@ int main(void){
 
 	MOTOR_DDR = 0x0F;
 
-	pwm(CH_A, 0, MAX_PWM_SPEED);
-	pwm(CH_B, 0, MAX_PWM_SPEED);
+	pwm(CH_A, 10000, MAX_PWM_SPEED);
+	pwm(CH_B, 10000, MAX_PWM_SPEED);
 
 	while(1){
 		uint8_t input = getCh();
+
+		putCh(input);
 
 		if(input == 'u')
 			controlMotor(FORWARD);
@@ -57,11 +59,11 @@ void controlMotor(uint8_t status){
 	switch(status){
 		case FORWARD:
 			if(channelA_status == FORWARD && channelB_status == FORWARD){
-				(channelA == MAX_PWM_SPEED) ? (channelA = MAX_PWM_SPEED) : (channelA += 100);
+				(channelA == MAX_PWM_SPEED) ? (channelA = MAX_PWM_SPEED) : (channelA += 10);
 				channelB = channelA;
 			}else if(channelA_status == REVERSE && channelB_status == REVERSE){
 				if(channelA > MIN_PWM_SPEED){
-					channelA -= 300;
+					channelA -= 30;
 					channelB = channelA;
 				}else{
 					FORWARD_MODE();
@@ -72,11 +74,11 @@ void controlMotor(uint8_t status){
 			break;
 		case REVERSE:
 			if(channelA_status == REVERSE && channelB_status == REVERSE){
-				(channelA == MAX_PWM_SPEED) ? (channelA = MAX_PWM_SPEED) : (channelA += 100);
+				(channelA == MAX_PWM_SPEED) ? (channelA = MAX_PWM_SPEED) : (channelA += 10);
 				channelB = channelA;
 			}else if(channelA_status == FORWARD && channelB_status == FORWARD){
 				if(channelA > MIN_PWM_SPEED){
-					channelA -= 300;
+					channelA -= 30;
 					channelB = channelA;
 				}else{
 					REVERSE_MODE();
