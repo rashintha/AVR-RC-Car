@@ -127,7 +127,7 @@ END GROUP
 .rela.plt
  *(.rela.plt)
 
-.text           0x0000000000000000      0x296
+.text           0x0000000000000000      0x2a6
  *(.vectors)
  .vectors       0x0000000000000000       0x68 /usr/lib/gcc/avr/7.1.0/../../../../avr/lib/avr5/crtatmega328p.o
                 0x0000000000000000                __vectors
@@ -210,50 +210,50 @@ END GROUP
                 0x000000000000008c                __vector_16
                 0x000000000000008c                __vector_18
                 0x000000000000008c                __vector_20
- .text          0x0000000000000090      0x1aa main.o
+ .text          0x0000000000000090      0x1ba main.o
                 0x0000000000000090                setupPWM
                 0x00000000000000a4                pwm
                 0x00000000000000c4                initUSART
                 0x00000000000000e0                getCh
                 0x00000000000000ee                putCh
                 0x00000000000000fc                controlMotor
- .text          0x000000000000023a        0x0 /usr/lib/gcc/avr/7.1.0/avr5/libgcc.a(_exit.o)
- .text          0x000000000000023a        0x0 /usr/lib/gcc/avr/7.1.0/avr5/libgcc.a(_clear_bss.o)
-                0x000000000000023a                . = ALIGN (0x2)
+ .text          0x000000000000024a        0x0 /usr/lib/gcc/avr/7.1.0/avr5/libgcc.a(_exit.o)
+ .text          0x000000000000024a        0x0 /usr/lib/gcc/avr/7.1.0/avr5/libgcc.a(_clear_bss.o)
+                0x000000000000024a                . = ALIGN (0x2)
  *(.text.*)
- .text.startup  0x000000000000023a       0x58 main.o
-                0x000000000000023a                main
+ .text.startup  0x000000000000024a       0x58 main.o
+                0x000000000000024a                main
  .text.libgcc.mul
-                0x0000000000000292        0x0 /usr/lib/gcc/avr/7.1.0/avr5/libgcc.a(_exit.o)
+                0x00000000000002a2        0x0 /usr/lib/gcc/avr/7.1.0/avr5/libgcc.a(_exit.o)
  .text.libgcc.div
-                0x0000000000000292        0x0 /usr/lib/gcc/avr/7.1.0/avr5/libgcc.a(_exit.o)
- .text.libgcc   0x0000000000000292        0x0 /usr/lib/gcc/avr/7.1.0/avr5/libgcc.a(_exit.o)
+                0x00000000000002a2        0x0 /usr/lib/gcc/avr/7.1.0/avr5/libgcc.a(_exit.o)
+ .text.libgcc   0x00000000000002a2        0x0 /usr/lib/gcc/avr/7.1.0/avr5/libgcc.a(_exit.o)
  .text.libgcc.prologue
-                0x0000000000000292        0x0 /usr/lib/gcc/avr/7.1.0/avr5/libgcc.a(_exit.o)
+                0x00000000000002a2        0x0 /usr/lib/gcc/avr/7.1.0/avr5/libgcc.a(_exit.o)
  .text.libgcc.builtins
-                0x0000000000000292        0x0 /usr/lib/gcc/avr/7.1.0/avr5/libgcc.a(_exit.o)
+                0x00000000000002a2        0x0 /usr/lib/gcc/avr/7.1.0/avr5/libgcc.a(_exit.o)
  .text.libgcc.fmul
-                0x0000000000000292        0x0 /usr/lib/gcc/avr/7.1.0/avr5/libgcc.a(_exit.o)
+                0x00000000000002a2        0x0 /usr/lib/gcc/avr/7.1.0/avr5/libgcc.a(_exit.o)
  .text.libgcc.fixed
-                0x0000000000000292        0x0 /usr/lib/gcc/avr/7.1.0/avr5/libgcc.a(_exit.o)
+                0x00000000000002a2        0x0 /usr/lib/gcc/avr/7.1.0/avr5/libgcc.a(_exit.o)
  .text.libgcc.mul
-                0x0000000000000292        0x0 /usr/lib/gcc/avr/7.1.0/avr5/libgcc.a(_clear_bss.o)
+                0x00000000000002a2        0x0 /usr/lib/gcc/avr/7.1.0/avr5/libgcc.a(_clear_bss.o)
  .text.libgcc.div
-                0x0000000000000292        0x0 /usr/lib/gcc/avr/7.1.0/avr5/libgcc.a(_clear_bss.o)
- .text.libgcc   0x0000000000000292        0x0 /usr/lib/gcc/avr/7.1.0/avr5/libgcc.a(_clear_bss.o)
+                0x00000000000002a2        0x0 /usr/lib/gcc/avr/7.1.0/avr5/libgcc.a(_clear_bss.o)
+ .text.libgcc   0x00000000000002a2        0x0 /usr/lib/gcc/avr/7.1.0/avr5/libgcc.a(_clear_bss.o)
  .text.libgcc.prologue
-                0x0000000000000292        0x0 /usr/lib/gcc/avr/7.1.0/avr5/libgcc.a(_clear_bss.o)
+                0x00000000000002a2        0x0 /usr/lib/gcc/avr/7.1.0/avr5/libgcc.a(_clear_bss.o)
  .text.libgcc.builtins
-                0x0000000000000292        0x0 /usr/lib/gcc/avr/7.1.0/avr5/libgcc.a(_clear_bss.o)
+                0x00000000000002a2        0x0 /usr/lib/gcc/avr/7.1.0/avr5/libgcc.a(_clear_bss.o)
  .text.libgcc.fmul
-                0x0000000000000292        0x0 /usr/lib/gcc/avr/7.1.0/avr5/libgcc.a(_clear_bss.o)
+                0x00000000000002a2        0x0 /usr/lib/gcc/avr/7.1.0/avr5/libgcc.a(_clear_bss.o)
  .text.libgcc.fixed
-                0x0000000000000292        0x0 /usr/lib/gcc/avr/7.1.0/avr5/libgcc.a(_clear_bss.o)
-                0x0000000000000292                . = ALIGN (0x2)
+                0x00000000000002a2        0x0 /usr/lib/gcc/avr/7.1.0/avr5/libgcc.a(_clear_bss.o)
+                0x00000000000002a2                . = ALIGN (0x2)
  *(.fini9)
- .fini9         0x0000000000000292        0x0 /usr/lib/gcc/avr/7.1.0/avr5/libgcc.a(_exit.o)
-                0x0000000000000292                exit
-                0x0000000000000292                _exit
+ .fini9         0x00000000000002a2        0x0 /usr/lib/gcc/avr/7.1.0/avr5/libgcc.a(_exit.o)
+                0x00000000000002a2                exit
+                0x00000000000002a2                _exit
  *(.fini9)
  *(.fini8)
  *(.fini8)
@@ -272,11 +272,11 @@ END GROUP
  *(.fini1)
  *(.fini1)
  *(.fini0)
- .fini0         0x0000000000000292        0x4 /usr/lib/gcc/avr/7.1.0/avr5/libgcc.a(_exit.o)
+ .fini0         0x00000000000002a2        0x4 /usr/lib/gcc/avr/7.1.0/avr5/libgcc.a(_exit.o)
  *(.fini0)
-                0x0000000000000296                _etext = .
+                0x00000000000002a6                _etext = .
 
-.data           0x0000000000800100        0x0 load address 0x0000000000000296
+.data           0x0000000000800100        0x0 load address 0x00000000000002a6
                 [!provide]                        PROVIDE (__data_start, .)
  *(.data)
  .data          0x0000000000800100        0x0 /usr/lib/gcc/avr/7.1.0/../../../../avr/lib/avr5/crtatmega328p.o
@@ -305,8 +305,8 @@ END GROUP
  *(.bss*)
  *(COMMON)
                 0x0000000000800106                PROVIDE (__bss_end, .)
-                0x0000000000000296                __data_load_start = LOADADDR (.data)
-                0x0000000000000296                __data_load_end = (__data_load_start + SIZEOF (.data))
+                0x00000000000002a6                __data_load_start = LOADADDR (.data)
+                0x00000000000002a6                __data_load_end = (__data_load_start + SIZEOF (.data))
 
 .noinit         0x0000000000800106        0x0
                 [!provide]                        PROVIDE (__noinit_start, .)
