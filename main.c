@@ -7,6 +7,9 @@
 #define STOP 	0x04
 #define NEUTRAL	0x05
 
+#define TRUE 	1
+#define FALSE 	0
+
 #define MOTOR_DDR	DDRC
 #define MOTOR_PORT	PORTC
 
@@ -39,7 +42,7 @@
 void controlMotor(uint8_t status);
 
 uint16_t channelA = 0, channelB = 0;
-uint8_t channelA_status = FORWARD, channelB_status = FORWARD;
+uint8_t channelA_status = FORWARD, channelB_status = FORWARD, left_status = FALSE, right_status=FALSE;
 
 int main(void){
 
@@ -118,18 +121,39 @@ void controlMotor(uint8_t status){
 				channelB = channelA;
 			}
 
-			if(channelB_status == FORWARD && channelB_status == FORWARD)
-				FORWARD_MODE()
-			else
-				REVERSE_MODE()
+			if(channelB_status == FORWARD && channelB_status == FORWARD){
+				FORWARD_MODE();
+			}
+			else{
+				REVERSE_MODE();
+			}
+
+			if(left_status || right_status){
+				channelA = 0x00;
+				channelB = 0x00;
+				left_status = FALSE;
+				right_status = FALSE;
+			}
 			break;
 
 		case RIGHT:
 			RIGHT_MODE();
+			if(channelA < MIN_PWM_SPEED){
+				left_status = FALSE;
+				right_status = TRUE;
+				channelA = 15000;
+				channelB = 15000;
+			}
 			break;
 
 		case LEFT:
 			LEFT_MODE();
+			if(channelA < MIN_PWM_SPEED){
+				left_status = TRUE;
+				right_status = FALSE;
+				channelA = MAX_PWM_SPEED / 2;
+				channelB = MAX_PWM_SPEED / 2;
+			}
 			break;
 	}
 
