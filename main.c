@@ -126,9 +126,11 @@ void controlMotor(uint8_t status){
 
 		case RIGHT:
 			RIGHT_MODE();
+			break;
 
 		case LEFT:
 			LEFT_MODE();
+			break;
 	}
 
 	pwm(CH_A, channelA, MAX_PWM_SPEED);
