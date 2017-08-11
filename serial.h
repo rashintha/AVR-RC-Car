@@ -1,5 +1,4 @@
 #define BAUD_RATE 9600
-#define BAUD_VAL (F_CPU / (16 * BAUD_RATE) - 1)
 
 #include <avr/io.h>
 #include "cpu_def.h"
