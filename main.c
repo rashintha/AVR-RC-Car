@@ -24,7 +24,7 @@
 #define LEFT_MODE()    { MOTOR_PORT |= (1 << MOTOR_RIGHT_FWD_PIN) | (1 << MOTOR_LEFT_REV_PIN); MOTOR_PORT &= ~((1 << MOTOR_RIGHT_REV_PIN) | (1 << MOTOR_LEFT_FWD_PIN)); }
 
 #define MAX_PWM_SPEED	20000
-#define MIN_PWM_SPEED	100
+#define MIN_PWM_SPEED	1000
 
 #define SPEED_INCREASE_RATE		10
 #define SPEED_DECREASE_RATE		5
@@ -119,6 +119,9 @@ void controlMotor(uint8_t status){
 			if(channelA > MIN_PWM_SPEED){
 				channelA -= SPEED_DECREASE_RATE;
 				channelB = channelA;
+			}else{
+				channelA = 0x00;
+				channelB = 0x00;
 			}
 
 			if(channelB_status == FORWARD && channelB_status == FORWARD){
